@@ -1,16 +1,60 @@
 body {
-  background: #0b0f19;
-  color: #ffffff;
-  font-family: Arial, sans-serif;
   margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0A0F1C;
+  color: #FFFFFF;
 }
 
-header {
-  background: #11172a;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #11172B;
+  padding: 15px 30px;
+  border-bottom: 2px solid #2E3A59;
+}
+
+.navbar h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.navbar button {
+  background: #1F2A44;
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  color: #FFFFFF;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.navbar button:hover {
+  background: #273350;
+}
+
+main {
   padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th, table td {
+  border-bottom: 1px solid #2E3A59;
+  padding: 12px 8px;
   text-align: center;
 }
 
-section {
-  padding: 20px;
+table th {
+  background: #121A30;
+  font-weight: bold;
+}
+
+table tr:hover {
+  background: #1F2A44;
 }
