@@ -1,29 +1,44 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>ÑFL Stats</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+document.addEventListener("DOMContentLoaded", () => {
+  // Datos de prueba
+  const passingData = [
+    { name: "QB1", att: 500, cmp: 350, yds: 3800, tds: 28, ints: 7 },
+    { name: "QB2", att: 480, cmp: 320, yds: 3500, tds: 24, ints: 9 },
+    { name: "QB3", att: 470, cmp: 310, yds: 3400, tds: 22, ints: 10 }
+  ];
 
-<header class="navbar">
-  <div class="logo">
-    <h1>ÑFL</h1>
-  </div>
-  <nav>
-    <button data-section="passing">Pase</button>
-    <button data-section="rushing">Carrera</button>
-    <button data-section="receiving">Recepción</button>
-  </nav>
-</header>
+  const section = document.getElementById("stats-table");
+  section.innerHTML = createPassingTable(passingData);
+});
 
-<main>
-  <section id="stats-table">
-    <!-- Aquí se inyectarán datos en tabla -->
-  </section>
-</main>
+function createPassingTable(data) {
+  let html = `
+    <table>
+      <thead>
+        <tr>
+          <th>Jugador</th>
+          <th>Attempts</th>
+          <th>Completions</th>
+          <th>Yds</th>
+          <th>TDs</th>
+          <th>INTs</th>
+        </tr>
+      </thead>
+      <tbody>
+  `;
 
-<script src="js/app.js"></script>
-</body>
-</html>
+  data.forEach(player => {
+    html += `
+      <tr>
+        <td>${player.name}</td>
+        <td>${player.att}</td>
+        <td>${player.cmp}</td>
+        <td>${player.yds}</td>
+        <td>${player.tds}</td>
+        <td>${player.ints}</td>
+      </tr>
+    `;
+  });
+
+  html += `</tbody></table>`;
+  return html;
+}
