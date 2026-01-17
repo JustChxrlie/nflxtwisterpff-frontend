@@ -4,18 +4,26 @@
   <meta charset="UTF-8">
   <title>ÑFL Stats</title>
   <link rel="stylesheet" href="css/styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <header>
-    <h1>ÑFL – Estadísticas Oficiales</h1>
-  </header>
 
-  <section>
-    <h2>Líderes de Pase</h2>
-    <canvas id="passingChart"></canvas>
+<header class="navbar">
+  <div class="logo">
+    <h1>ÑFL</h1>
+  </div>
+  <nav>
+    <button data-section="passing">Pase</button>
+    <button data-section="rushing">Carrera</button>
+    <button data-section="receiving">Recepción</button>
+  </nav>
+</header>
+
+<main>
+  <section id="stats-table">
+    <!-- Aquí se inyectarán datos en tabla -->
   </section>
+</main>
 
-  <script src="js/app.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
